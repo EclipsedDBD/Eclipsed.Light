@@ -1,0 +1,70 @@
+﻿using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Eclipsed.Light.Classes
+{
+    public class MarketBuilder
+    {
+        private int unix = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
+        private JObject MarketData;
+        private Random rnd = new Random();
+        public MarketBuilder()
+        {
+            MarketData = JObject.Parse(Cache.MarketEmpty);
+        }
+
+        public MarketBuilder WithCharacters()
+        {
+            var chars = JArray.Parse(Cache.Characters);
+            foreach (var character in chars)
+            {
+                var jobject = new JObject();
+                jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));
+                jobject.Add("objectId", character);
+                jobject.Add("quantity", 1);
+                (MarketData["data"]["inventory"] as JArray).Add(jobject);
+            }
+
+            return this;
+        }
+
+        public MarketBuilder WithCosmetics()
+        {
+            var cosmetics = JArray.Parse(Cache.Cosmetics);
+            foreach (var cosmetic in cosmetics)
+            {
+                var jobject = new JObject();
+                jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));
+                jobject.Add("objectId", cosmetic);
+                jobject.Add("quantity", 1);
+                (MarketData["data"]["inventory"] as JArray).Add(jobject);
+            }
+
+            return this;
+        }
+
+        public MarketBuilder WithItems()
+        {
+            var Items = JArray.Parse(Cache.Items);
+            foreach (var item in Items)
+            {
+                var jobject = new JObject();
+                jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));
+                jobject.Add("objectId", item);
+                jobject.Add("quantity", 3);
+                (MarketData["data"]["inventory"] as JArray).Add(jobject);
+            }
+
+            return this;
+        }
+
+        public string Build()
+        {
+            return MarketData.ToString(Newtonsoft.Json.Formatting.None);
+        }
+    }
+}
