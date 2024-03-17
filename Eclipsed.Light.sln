@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eclipsed.Light", "Eclipsed.Light\Eclipsed.Light.csproj", "{636D5AE9-974C-4DA8-835D-A84D64A99773}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{636D5AE9-974C-4DA8-835D-A84D64A99773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{636D5AE9-974C-4DA8-835D-A84D64A99773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{636D5AE9-974C-4DA8-835D-A84D64A99773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{636D5AE9-974C-4DA8-835D-A84D64A99773}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6F24354-86DE-473D-97DF-B9CFDC955527}
+	EndGlobalSection
+EndGlobal
