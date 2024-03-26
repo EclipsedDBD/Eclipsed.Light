@@ -1,6 +1,6 @@
-﻿using Eclipsed.Light.Classes;
-using Eclipsed.Light.Forms;
-using Eclipsed.Light.Properties;
+﻿using honeypot.Classes;
+using honeypot.Forms;
+using honeypot.Properties;
 using Fiddler;
 using IniParser;
 using IniParser.Model;
@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace Eclipsed.Light
+namespace honeypot
 {
     public partial class Main : Form
     {

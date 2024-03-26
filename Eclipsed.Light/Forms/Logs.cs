@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eclipsed.Light.Forms
+namespace honeypot.Forms
 {
     public partial class Logs : Form
     {

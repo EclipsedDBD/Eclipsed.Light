@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eclipsed.Light.Models
+namespace honeypot.Models
 {
     public class MarketFile
     {

@@ -1,4 +1,4 @@
-﻿using Eclipsed.Light.Models;
+﻿using honeypot.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eclipsed.Light.Classes
+namespace honeypot.Classes
 {
     public static class Market
     {

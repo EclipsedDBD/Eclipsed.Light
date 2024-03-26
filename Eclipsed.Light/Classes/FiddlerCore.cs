@@ -1,4 +1,4 @@
-﻿using Eclipsed.Light.Classes;
+﻿using honeypot.Classes;
 using Fiddler;
 using Newtonsoft.Json.Linq;
 using System;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Eclipsed.Light
+namespace honeypot
 {
     public static class FiddlerCore
     {

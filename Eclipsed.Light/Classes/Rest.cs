@@ -1,4 +1,4 @@
-﻿using Eclipsed.Light.Models;
+﻿using honeypot.Models;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eclipsed.Light.Classes
+namespace honeypot.Classes
 {
     public static class Rest
     {

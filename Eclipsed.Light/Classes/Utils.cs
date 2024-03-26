@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eclipsed.Light.Classes
+namespace honeypot.Classes
 {
     public static class Utils
     {

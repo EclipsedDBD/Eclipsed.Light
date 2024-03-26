@@ -1,4 +1,4 @@
-﻿namespace Eclipsed.Light.Forms
+﻿namespace honeypot.Forms
 {
     partial class Logs
     {
@@ -57,7 +57,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Logs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Logs | Eclipsed.Light";
+            this.Text = "Logs | honeypot";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Logs_FormClosing);
             this.ResumeLayout(false);
 
