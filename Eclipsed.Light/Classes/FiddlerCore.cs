@@ -84,7 +84,7 @@ namespace honeypot
                         .WithCosmetics();
                     if (Options.BloodwebExploit)
                     {
-                        market.WithItems();
+                        market.WithInventory();
                     }
                     session.utilSetResponseBody(market.Build());
                 }

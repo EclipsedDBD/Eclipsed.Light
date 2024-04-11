@@ -47,10 +47,10 @@ namespace honeypot.Classes
             return this;
         }
 
-        public MarketBuilder WithItems()
+        public MarketBuilder WithInventory()
         {
-            var Items = JArray.Parse(Cache.Items);
-            foreach (var item in Items)
+            var Inventory = JArray.Parse(Cache.Inventory);
+            foreach (var item in Inventory)
             {
                 var jobject = new JObject();
                 jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));

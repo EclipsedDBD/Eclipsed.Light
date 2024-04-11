@@ -410,14 +410,14 @@
             // 
             this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblVersion.BackColor = System.Drawing.Color.Transparent;
-            this.lblVersion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblVersion.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.lblVersion.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblVersion.ForeColor = System.Drawing.Color.White;
             this.lblVersion.Location = new System.Drawing.Point(268, 442);
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(83, 26);
             this.lblVersion.TabIndex = 8;
-            this.lblVersion.Text = "v1.1";
+            this.lblVersion.Text = "v1.2";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Main

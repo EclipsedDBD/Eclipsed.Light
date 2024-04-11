@@ -16,7 +16,7 @@ namespace honeypot.Classes
             CharacterData = File.ReadAllText(Market.MarketFilePaths["CharacterData"]);
             Characters = File.ReadAllText(Market.MarketFilePaths["Characters"]);
             Cosmetics = File.ReadAllText(Market.MarketFilePaths["Cosmetics"]);
-            Items = File.ReadAllText(Market.MarketFilePaths["Items"]);
+            Inventory = File.ReadAllText(Market.MarketFilePaths["Inventory"]);
         }
 
         public static string MarketEmpty { get; set; }
@@ -24,7 +24,7 @@ namespace honeypot.Classes
         public static string CharacterData { get; set; }
         public static string Characters { get; set; }
         public static string Cosmetics { get; set; }
-        public static string Items { get; set; }
+        public static string Inventory { get; set; }
 
         public static string SelectedBanner { get; set; }
     }
