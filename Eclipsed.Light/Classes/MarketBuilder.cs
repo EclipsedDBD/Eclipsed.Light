@@ -24,7 +24,7 @@ namespace honeypot.Classes
             {
                 var jobject = new JObject();
                 jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));
-                jobject.Add("objectId", character);
+                jobject.Add("objectId", character["itemId"].ToString());
                 jobject.Add("quantity", 1);
                 (MarketData["data"]["inventory"] as JArray).Add(jobject);
             }
