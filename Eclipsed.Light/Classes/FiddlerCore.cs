@@ -76,16 +76,19 @@ namespace honeypot
                 #endregion
 
                 #region Unlock Skins
-                if (Options.UnlockAll && session.uriContains("api/v1/inventories"))
+                if (Options.UnlockAll && session.fullUrl.EndsWith("/api/v1/inventories", StringComparison.OrdinalIgnoreCase))
                 {
                     session.utilCreateResponseAndBypassServer();
+
                     var market = new MarketBuilder()
                         .WithCharacters()
                         .WithCosmetics();
+
                     if (Options.BloodwebExploit)
                     {
                         market.WithInventory();
                     }
+
                     session.utilSetResponseBody(market.Build());
                 }
                 #endregion
