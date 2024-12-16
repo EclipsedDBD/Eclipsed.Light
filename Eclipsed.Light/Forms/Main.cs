@@ -246,8 +246,8 @@ namespace honeypot
 
         public void UpdateBhvrSession(string bhvrSession)
         {
-            this.tbBhvrSession.Text = bhvrSession;
-        }
+                this.tbBhvrSession.Text = bhvrSession;
+            }
 
         public void UpdateBanStatus(bool banned)
         {

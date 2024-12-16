@@ -125,11 +125,13 @@ namespace honeypot
                 {
                     if (session.uriContains("api/v1/dbd-character-data/bloodweb"))
                     {
+
                         session.bBufferResponse = true;
                     }
 
                     if (session.uriContains("api/v1/dbd-character-data/get-all"))
                     {
+                        session.responseCode = 200;
                         session.bBufferResponse = true;
                     }
                 }
@@ -156,41 +158,44 @@ namespace honeypot
                         for (int i = 0; i < array.Count; i++)
                         {
                             array[i]["prestigeLevel"] = Options.Prestige;
-                            array[i]["bloodWebLevel"] = Options.BloodWebLevel;
-                            array[i]["legacyPrestigeLevel"] = Options.LegacyPrestigeLevel;
+                            array[i]["bloodWebLevel"] = 50;
+                            array[i]["legacyPrestigeLevel"] = 3;
                         }
                         session.utilSetResponseBody(getall.ToString(Newtonsoft.Json.Formatting.None));
                     }
 
-                    if (session.uriContains("api/v1/dbd-character-data/bloodweb"))
+                    if (Options.BloodwebExploit)
                     {
-                        var reqBody = JObject.Parse(session.GetRequestBodyAsString());
-                        var resBody = JObject.Parse(session.GetResponseBodyAsString());
+                        if (session.uriContains("api/v1/dbd-character-data/bloodweb"))
+                        {
+                            session.responseCode = 200;
+                            var reqBody = session.GetRequestBodyAsString();
+                            var resBody = session.GetResponseBodyAsString();
+                            if (reqBody.TryParseJObject(out var json_Request) && resBody.TryParseJObject(out var json_Response))
+                            {
+                                var charName = (string)json_Request["characterName"];
 
-                        var result = JObject.Parse(Cache.CharacterData);
-                        result["characterName"] = resBody["characterName"];
+                                var result_Response = JObject.Parse(Cache.CharacterData);
+                                result_Response["characterName"] = charName;
 
-                        result["prestigeLevel"] = Options.Prestige;
-                        result["bloodWebLevel"] = Options.BloodWebLevel;
-                        result["legacyPrestigeLevel"] = Options.LegacyPrestigeLevel;
+                                result_Response["prestigeLevel"] = Options.Prestige;
+                                result_Response["bloodWebLevel"] = Options.BloodWebLevel;
+                                result_Response["legacyPrestigeLevel"] = Options.LegacyPrestigeLevel;
 
-                        session.utilSetResponseBody(result.ToString(Newtonsoft.Json.Formatting.None));
+                                session.utilSetResponseBody(result_Response.ToString(Newtonsoft.Json.Formatting.None));
+                            }
+                        }
                     }
                 }
                 #endregion
 
                 #region Ban Status
-                if (session.uriContains("api/v1/auth"))
+                if (session.uriContains("api/v1/players/ban/status"))
                 {
                     session.utilDecodeResponse();
                     var body = session.GetResponseBodyAsString();
-                    var banStatusCodes = new string[]
-                        {
-                            "InvalidTokenException",
-                            "NotAllowedException",
-                            "localizationCode"
-                        };
-                    if (banStatusCodes.Any(x => body.Contains(x)))
+
+                    if (body.Contains("\"isBanned\":true"))
                     {
                         Main.instance.UpdateBanStatus(true);
                     }

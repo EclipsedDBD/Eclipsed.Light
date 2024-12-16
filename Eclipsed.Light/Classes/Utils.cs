@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -17,6 +18,20 @@ namespace honeypot.Classes
             {
                 var hash = sha.ComputeHash(b);
                 return BitConverter.ToString(hash).Replace("-", string.Empty);
+            }
+        }
+        public static bool TryParseJObject(this string jsonString, out JObject result)
+        {
+            result = null;
+
+            try
+            {
+                result = JObject.Parse(jsonString);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

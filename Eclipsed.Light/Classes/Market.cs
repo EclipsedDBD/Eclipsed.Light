@@ -21,7 +21,7 @@ namespace honeypot.Classes
             { "CharactersData", Path.Combine(BasePath, "CharactersData.json") },
             { "CharacterData", Path.Combine(BasePath, "CharacterData.json") },
             { "Characters", Path.Combine(BasePath, "Characters.json") },
-            { "Cosmetics", Path.Combine(BasePath, "Cosmetics.json") },
+            { "Cosmetics", Path.Combine(BasePath, "CosmeticsEmpty.json") },
             { "Inventory", Path.Combine(BasePath, "Inventory.json") }
         };
 
