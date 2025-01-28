@@ -15,6 +15,8 @@ namespace honeypot.Classes
         public MarketBuilder()
         {
             MarketData = JObject.Parse(Cache.MarketEmpty);
+            if (MarketData["inventoryItems"] == null)
+                MarketData["inventoryItems"] = new JArray();
         }
 
         public MarketBuilder WithCharacters()
@@ -26,9 +28,8 @@ namespace honeypot.Classes
                 jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));
                 jobject.Add("objectId", character["itemId"].ToString());
                 jobject.Add("quantity", 1);
-                (MarketData["data"]["inventory"] as JArray).Add(jobject);
+                (MarketData["inventoryItems"] as JArray).Add(jobject);
             }
-
             return this;
         }
 
@@ -41,9 +42,8 @@ namespace honeypot.Classes
                 jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));
                 jobject.Add("objectId", cosmetic);
                 jobject.Add("quantity", 1);
-                (MarketData["data"]["inventory"] as JArray).Add(jobject);
+                (MarketData["inventoryItems"] as JArray).Add(jobject);
             }
-
             return this;
         }
 
@@ -56,11 +56,11 @@ namespace honeypot.Classes
                 jobject.Add("lastUpdateAt", rnd.Next(unix - 1000, unix + 1000));
                 jobject.Add("objectId", item);
                 jobject.Add("quantity", 3);
-                (MarketData["data"]["inventory"] as JArray).Add(jobject);
+                (MarketData["inventoryItems"] as JArray).Add(jobject);
             }
-
             return this;
         }
+
 
         public string Build()
         {
