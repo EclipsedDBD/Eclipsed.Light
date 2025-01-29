@@ -76,7 +76,7 @@ namespace honeypot
                 #endregion
 
                 #region Unlock Skins
-                if (Options.UnlockAll && session.fullUrl.EndsWith("/api/v1/inventories", StringComparison.OrdinalIgnoreCase))
+                if (Options.UnlockAll && session.fullUrl.EndsWith("/api/v1/dbd-inventories/all", StringComparison.OrdinalIgnoreCase))
                 {
                     session.utilCreateResponseAndBypassServer();
 
