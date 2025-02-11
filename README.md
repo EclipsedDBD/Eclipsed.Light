@@ -1,6 +1,8 @@
 # Eclipsed.Light
 _Simple Dead by Daylight unlocker made by Eclipsed_
 
+# **⚠️ WARNING: LIGHT IS DETECTED. DO NOT USE. ⚠️**
+
 ## **Quick Description**
 
 ### - Unlock all Cosmetics
@@ -12,12 +14,14 @@ _Simple Dead by Daylight unlocker made by Eclipsed_
 
 ## About **Eclipsed Light**
 Eclipsed.Light is a very **Light** version of [Eclipsed.top](https://eclipsed.top/)
-It was made by Eclipsed to give our userbase a new alternative to "Ana Kata", an very old unlocker that lasted very long.
-We kept everything almost the same UI wise, it still has the simplicity of "Ana Kata".
+It was made by Eclipsed to give our userbase a new alternative to "Ana Kata", a very old unlocker that lasted very long.
+We kept everything almost the same UI-wise, it still has the simplicity of "Ana Kata".
 The goal of Eclipsed.Light is to keep the legacy of the simple unlocker up while being
 
-### - more powerfull 💪
+### - more powerful 💪
 ### - faster ⚡
 ### - more **light**weight ⚖️
 ### - more frequently updated 🔄
 ### - more loved 💜
+
+# **⚠️ WARNING: LIGHT IS DETECTED. DO NOT USE. ⚠️**
