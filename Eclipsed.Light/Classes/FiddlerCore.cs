@@ -1,4 +1,4 @@
-﻿using honeypot.Classes;
+﻿using DecoyRequest.Classes;
 using Fiddler;
 using Newtonsoft.Json.Linq;
 using System;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace honeypot
+namespace DecoyRequest
 {
     public static class FiddlerCore
     {

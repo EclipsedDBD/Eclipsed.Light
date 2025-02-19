@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace honeypot.Forms
+namespace DecoyRequest.Forms
 {
     public partial class Logs : Form
     {

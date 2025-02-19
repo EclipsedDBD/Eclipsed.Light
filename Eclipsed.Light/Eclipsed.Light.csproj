@@ -7,8 +7,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{636D5AE9-974C-4DA8-835D-A84D64A99773}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>honeypot</RootNamespace>
-    <AssemblyName>honeypot</AssemblyName>
+    <RootNamespace>DecoyRequest</RootNamespace>
+    <AssemblyName>DecoyRequest</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>eclipsed_light.ico</ApplicationIcon>

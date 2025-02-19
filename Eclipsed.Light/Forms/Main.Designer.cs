@@ -1,4 +1,4 @@
-﻿namespace honeypot
+﻿namespace DecoyRequest
 {
     partial class Main
     {
@@ -295,7 +295,7 @@
             this.btnCopyBhvrSession.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCopyBhvrSession.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.btnCopyBhvrSession.HoverState.Parent = this.btnCopyBhvrSession;
-            this.btnCopyBhvrSession.Image = global::honeypot.Properties.Resources.copy_50px;
+            this.btnCopyBhvrSession.Image = global::DecoyRequest.Properties.Resources.copy_50px;
             this.btnCopyBhvrSession.ImageSize = new System.Drawing.Size(25, 25);
             this.btnCopyBhvrSession.Location = new System.Drawing.Point(330, 53);
             this.btnCopyBhvrSession.Name = "btnCopyBhvrSession";
@@ -387,7 +387,7 @@
             this.btnLogs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogs.HoverState.ImageSize = new System.Drawing.Size(25, 25);
             this.btnLogs.HoverState.Parent = this.btnLogs;
-            this.btnLogs.Image = global::honeypot.Properties.Resources.parchment_50px;
+            this.btnLogs.Image = global::DecoyRequest.Properties.Resources.parchment_50px;
             this.btnLogs.ImageSize = new System.Drawing.Size(25, 25);
             this.btnLogs.Location = new System.Drawing.Point(357, 443);
             this.btnLogs.Name = "btnLogs";
@@ -417,7 +417,7 @@
             this.lblVersion.Name = "lblVersion";
             this.lblVersion.Size = new System.Drawing.Size(83, 26);
             this.lblVersion.TabIndex = 8;
-            this.lblVersion.Text = "v1.6";
+            this.lblVersion.Text = "v1.7";
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Main
@@ -440,7 +440,6 @@
             this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Honeypot";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.gbOptions.ResumeLayout(false);

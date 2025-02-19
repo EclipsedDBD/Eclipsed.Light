@@ -1,4 +1,4 @@
-﻿using honeypot.Models;
+﻿using DecoyRequest.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace honeypot.Classes
+namespace DecoyRequest.Classes
 {
     public static class Market
     {

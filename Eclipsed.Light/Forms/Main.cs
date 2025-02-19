@@ -1,6 +1,6 @@
-﻿using honeypot.Classes;
-using honeypot.Forms;
-using honeypot.Properties;
+﻿using DecoyRequest.Classes;
+using DecoyRequest.Forms;
+using DecoyRequest.Properties;
 using Fiddler;
 using IniParser;
 using IniParser.Model;
@@ -21,17 +21,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Timers;
 
-namespace honeypot
+namespace DecoyRequest
 {
     public partial class Main : Form
     {
         public static Main instance { get; private set; }
+        private System.Timers.Timer titleChangeTimer;
+
         public Main()
         {
             InitializeComponent();
             instance = this;
             Directory.CreateDirectory(Globals.DataFolder);
+
+            // Initialize the title with a random number
+            var random = new Random();
+            var randomNumbers = string.Join("", Enumerable.Range(0, 5).Select(_ => random.Next(0, 10)));
+            this.Text = randomNumbers;
         }
 
         public static Logs Logs { get; private set; }
@@ -44,6 +52,21 @@ namespace honeypot
             Application.ThreadException += Application_ThreadException;
 
             LoadSettings();
+
+            titleChangeTimer = new System.Timers.Timer(3000);
+            titleChangeTimer.Elapsed += OnTitleChangeTimerElapsed;
+            titleChangeTimer.Start();
+        }
+
+        private void OnTitleChangeTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            var random = new Random();
+            var randomNumbers = string.Join("", Enumerable.Range(0, 5).Select(_ => random.Next(0, 10)));
+
+            this.Invoke((MethodInvoker)delegate
+            {
+                this.Text = randomNumbers;
+            });
         }
 
         private void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
@@ -119,6 +142,9 @@ namespace honeypot
 
         private async Task StartUnlocker()
         {
+            var random = new Random();
+            ushort port = (ushort)random.Next(1111, 10000);
+
             if (Options.AutoUpdater)
             {
                 UpdateStatus("Updating market files");
@@ -163,7 +189,12 @@ namespace honeypot
             }
 
             var Fiddlersettings = new FiddlerCoreStartupSettingsBuilder()
-                    .ListenOnPort(8888).RegisterAsSystemProxy().ChainToUpstreamGateway().DecryptSSL().OptimizeThreadPool().Build();
+                    .ListenOnPort(port)
+                    .RegisterAsSystemProxy()
+                    .ChainToUpstreamGateway()
+                    .DecryptSSL()
+                    .OptimizeThreadPool()
+                    .Build();
             FiddlerApplication.Startup(Fiddlersettings);
             FiddlerApplication.BeforeRequest += FiddlerCore.BeforeRequest;
             FiddlerApplication.BeforeResponse += FiddlerCore.BeforeResponse;
@@ -246,8 +277,8 @@ namespace honeypot
 
         public void UpdateBhvrSession(string bhvrSession)
         {
-                this.tbBhvrSession.Text = bhvrSession;
-            }
+            this.tbBhvrSession.Text = bhvrSession;
+        }
 
         public void UpdateBanStatus(bool banned)
         {
@@ -260,6 +291,12 @@ namespace honeypot
             if (FiddlerCore.IsStarted)
             {
                 FiddlerApplication.Shutdown();
+            }
+
+            if (titleChangeTimer != null)
+            {
+                titleChangeTimer.Stop();
+                titleChangeTimer.Dispose();
             }
         }
 
@@ -377,6 +414,5 @@ namespace honeypot
                 Logs.WriteError("An error occurred while updating music", ex);
             }
         }
-
     }
 }

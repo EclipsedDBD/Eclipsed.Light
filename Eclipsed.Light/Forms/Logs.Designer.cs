@@ -1,4 +1,4 @@
-﻿namespace honeypot.Forms
+﻿namespace DecoyRequest.Forms
 {
     partial class Logs
     {
@@ -57,7 +57,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Logs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Logs | honeypot";
+            this.Text = "Logs | DecoyRequest";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Logs_FormClosing);
             this.ResumeLayout(false);
 
