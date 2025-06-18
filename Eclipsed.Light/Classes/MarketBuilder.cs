@@ -61,6 +61,21 @@ namespace DecoyRequest.Classes
             return this;
         }
 
+        public JArray BEWInventory()
+        {
+            var characterItems = new JArray();
+            var Inventory = JArray.Parse(Cache.Inventory);
+
+            foreach (var item in Inventory)
+            {
+                var jobject = new JObject();
+                jobject.Add("itemId", item);
+                jobject.Add("quantity", 3);
+                characterItems.Add(jobject);
+            }
+
+            return characterItems;
+        }
 
         public string Build()
         {

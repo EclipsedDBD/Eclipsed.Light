@@ -43,7 +43,7 @@ namespace DecoyRequest.Classes
         /// <summary>
         /// The default value of the bloodweb level for every character for bloodweb exploit, value must be minimum 0 and maximum 50
         /// </summary>
-        public const int BloodWebLevel = 50;
+        public const int BloodWebLevel = 51;
 
         /// <summary>
         /// The default value of the legacy prestige for every character for bloodweb exploit, value must be minimum 0 and maximum 3

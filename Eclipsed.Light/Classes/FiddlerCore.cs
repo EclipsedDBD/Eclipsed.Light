@@ -148,6 +148,8 @@ namespace DecoyRequest
         {
             try
             {
+                if (!session.hostname.Contains("bhvrdbd.com")) return;
+
                 #region Bloodweb Exploit
                 if (Options.BloodwebExploit)
                 {
@@ -176,6 +178,7 @@ namespace DecoyRequest
                                 var charName = (string)json_Request["characterName"];
 
                                 var result_Response = JObject.Parse(Cache.CharacterData);
+                                result_Response["characterItems"] = new MarketBuilder().BEWInventory();
                                 result_Response["characterName"] = charName;
 
                                 result_Response["prestigeLevel"] = Options.Prestige;
